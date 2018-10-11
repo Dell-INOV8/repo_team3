@@ -22,6 +22,24 @@ Data on this page is populated from the account database we will figure out late
 		<button onclick="window.location.href='MAKE_NEW_POST.html'">Make A New Post </button><br>
 		<button onclick="window.location.href='READ_POST.html'">Read Posts </button><br>
 		<button onclick="window.location.href='MAIN.html'">Logout </button><br>
-
+		<button onclick=getCookie("currUser")></button>
+		<script language="javascript">
+		function getCookie(cname) 
+		{
+			var name = cname + "=";
+			var decodedCookie = decodeURIComponent(document.cookie);
+			var ca = decodedCookie.split(';');
+			for(var i = 0; i <ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0) == ' ') {
+					c = c.substring(1);
+				}
+				if (c.indexOf(name) == 0) {
+					return c.substring(name.length, c.length);
+				}
+			}
+			return "";
+		}
+	</script>
 	</body>
 </html>
