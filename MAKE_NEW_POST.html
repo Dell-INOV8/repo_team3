@@ -12,13 +12,14 @@ LINKS_TO: HOMEPAGE MESSAGE
 	</head>
 	
 	<body>
-		Title: <input type="text" name="Password"><br>
-		Tag: <input type="text" name="Password"><br>
-		Message:<textarea rows="10" cols="50"></textarea><br><br>
-		<button onclick="window.location.href='READ_POST.html'">Submit</button>
-		<button onclick="window.location.href='HOMEPAGE.html'">Cancel Message</button>
-
-
-
+		<form method="post" action="index.php">
+			Title:<br>
+			<input type="text" name="title"><br>
+			Tag(s):<br>
+			<input type="text" name="tag"><br>
+			Message:<br>
+			<input type="text" name="message"><br>
+			<input type="submit" value="Login">
+		</form>
 	</body>
 </html>

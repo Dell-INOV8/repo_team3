@@ -24,18 +24,14 @@ combination of standard letters or numbers.
 <html>
 	<head>
 		<title>Menu</title>
-		<link href="style.css" rel="stylesheet" type="text/css"/>
 	</head>
 	
 	<body>
-		Username: <input  type="text" name="username"><br>
-		Password: <input type="password" name="Password"><br><br>
-
-		<!-- Find a way to verify that the login presented is valid, then use that info to populate future pages-->
-		<button class="menu_login" onclick="window.location.href='HOMEPAGE.html'">Login</button>
-		<!-- Button for create new id needs to refresh the page and prompt user to log in again-->
-		<button class="menu_create" onclick="window.location.href='MENU.html'">Create Account</button>
-
-
+		<form method="post" action="index.php">
+			Username:<br/>
+			<input type="text" name="username"><br/>
+			Password:<br/>
+			<input type="password" name="password"><br/>
+			<input type="submit" value="Login">
 	</body>
 </html>
