@@ -2,17 +2,31 @@
 HOMEPAGE:
 BUTTONS: MakeNewPost ReadPosts Logout
 LINKS_TO: MENU MAKE_NEW_POST READ_POST
+
+After login the user is placed on this page.  Simple account information can be
+shown along the right bar (NAME, ACCOUNT_CREATION_DATE, NUMBER_MESSAGES,...).
+Along the center of the screen is a set of simple buttons for the user to
+interact with.
+
+From this page the user can MAKE_NEW_POST, READ_POST, and LOGOUT.
+
+Data on this page is populated from the account database we will figure out later...
 -->
 
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>Homepage</title>
+		<link href="style.css" rel="stylesheet" type="text/css"/>
 	</head>
 	
 	<body>
-		<button onclick="window.location.href='MAKE_NEW_POST.html'">Make A New Post</button>
-		<button onclick="window.location.href='READ_POST.html'">Read Posts</button>
+		<button class="button" onclick="window.location.href='MAKE_NEW_POST.html'">Make A New Post
+		</button><br>
+		<button onclick="window.location.href='READ_POST.html'">Read Posts
+		</button><br>
+		<button onclick="window.location.href='MENU.html'">Logout
+		</button><br>
 
 	</body>
 </html>
