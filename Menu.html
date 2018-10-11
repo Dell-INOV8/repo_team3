@@ -3,6 +3,21 @@ MENU:
 FIELDS: UserName Password
 BUTTONS: CreateAccount Login Close
 LINKS_TO: HOMEPAGE
+
+The MENU page is a simple login page that sends login requests to a server to
+verify USERNAME/PASSWORD combinations.  On a positive response the webpage is
+forwarded to the HOMEPAGE.
+
+If the person accessing the page for the first time is new, the button CREATE
+ACCOUNT will submit a request to the server to see if the USERNAME is unique.
+On a positive response the page refreshes and alters the user that the account
+was created.
+
+USERNAME is a simple ASCII string from 1 to 20 characters in length with no
+spaces or special characters.
+
+PASSWORD is a simple ASCII string from 5 to 20 characters in length with any
+combination of standard letters or numbers.
 -->
 
 <!DOCTYPE html>
