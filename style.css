@@ -12,3 +12,20 @@ body {
     display: inline-block;
     font-size: 16px;
 }
+
+.menu_login {
+    position: absolute;
+    left: 40%;
+    top: 10%;
+    width: 10%;
+    text-align: center;
+    font-size: 18px;
+}
+.menu_create {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    width: 10%;
+    text-align: center;
+    font-size: 18px;
+}
