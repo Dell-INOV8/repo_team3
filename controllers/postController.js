@@ -21,3 +21,10 @@ exports.createPost = function(req, res) {
     });
     res.send("post created successfully");
 };
+
+exports.getPosts = function(req, res) {
+    Post.find({}, function(err, posts) {
+        res.send(posts);
+    });
+
+}
