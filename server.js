@@ -5,11 +5,12 @@ var mongo = require('mongodb');
 var mongoose = require('mongoose');
 var app = express();
 var mongoose = require('mongoose');
-var Data = require("./dataModel");
 var router = express.Router();
+var mongoUrl = "mongodb://user:12345a@ds113853.mlab.com:13853/dell-h2h"
+var route = require('./routes/routes');
 
 //connect to database
-mongoose.connect('mongodb://localhost/dell-h2h', { useNewUrlParser: true});
+mongoose.connect(mongoUrl, { useNewUrlParser: true});
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
@@ -18,35 +19,8 @@ db.once('open', function() {
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+app.use('/api', route);
 
-
-router.get("/getData", (req, res) => {
-  Data.find((err, data) => {
-    if(err) return res.json({success: false, error: err});
-    return res.json({success: true, data: data});
-  });
-});
-
-router.post("/addData", (req, res) => {
-  let data = new Data();
-
-  const {id, name, skills} = req.body;
-
-  if ((!id && id !== 0) || !skills) {
-    return res.json({
-      success: false,
-      error: "INVALID INPUTS"
-    });
-  }
-  data.skills = skills;
-  data.id = id
-  data.save(err => {
-    if (err) return res.json({success: false, error: err});
-    return res.json({success: true});
-  });
-});
-
-app.use("/api", router);
 
 var port = (process.env.Port||8080)
 app.listen(port, function(){
